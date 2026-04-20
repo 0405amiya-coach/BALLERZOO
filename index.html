@@ -1,487 +1,217 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>BALLERZOO バスケットボールスクール｜小中学生向け（加賀市）</title>
-  <meta name="description" content="BALLERZOOスクール（加賀市）。小学5年生〜中学3年生（男女）対象。体験は初回無料。参加費は1回500円で積算（上限：小学生2,000円／中学生4,000円）。クラブ生は月謝5,000円＋年間活動費15,000円。平日19:00〜21:00。会場：片山津中・錦城中体育館。お問い合わせ：LINE・フォーム・メール・SNS。" />
-  <meta name="theme-color" content="#0b0b0c" />
-
-  <!-- Fonts（任意：よりミニマルで上品な印象） -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BALLERZOOスクール｜バスケットボールスクール</title>
+  <meta name="description" content="BALLERZOOスクール。小学5年生〜中学3年生対象。体験初回無料。平日19:00〜21:00・日曜18:00〜20:00。">
+  <meta name="theme-color" content="#ffffff">
 
   <style>
     :root{
-      --bg:#0b0b0c;
-      --bg2:#0f0f12;
-      --text:#f5f5f7;
-      --muted:rgba(245,245,247,.72);
-      --muted2:rgba(245,245,247,.55);
-      --line:rgba(245,245,247,.14);
-      --line2:rgba(245,245,247,.09);
-      --shadow: 0 22px 60px rgba(0,0,0,.55);
-      --radius:22px;
-      --max:1080px;
+      --bg:#ffffff;
+      --sub:#f6f6f7;
+      --text:#111;
+      --muted:#555;
+      --line:#e5e5e5;
+      --radius:14px;
+      --max:1100px;
     }
-    *{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; }
+    *{box-sizing:border-box}
     body{
       margin:0;
-      font-family: Inter, "Noto Sans JP", system-ui, -apple-system, "Segoe UI", Roboto, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP",sans-serif;
+      background:var(--bg);
       color:var(--text);
-      background:
-        radial-gradient(1100px 600px at 15% 8%, rgba(255,255,255,.08), transparent 60%),
-        radial-gradient(900px 500px at 85% 22%, rgba(255,255,255,.06), transparent 60%),
-        linear-gradient(180deg, var(--bg), var(--bg2));
       line-height:1.75;
-      letter-spacing:.2px;
     }
-    a{ color:inherit; text-decoration:none; }
-    .wrap{ max-width:var(--max); margin:0 auto; padding:22px; }
+    a{text-decoration:none;color:inherit}
+    .wrap{max-width:var(--max);margin:auto;padding:20px}
 
-    /* Header */
     header{
-      position:sticky; top:0; z-index:50;
-      background: rgba(11,11,12,.62);
-      backdrop-filter: blur(12px);
-      border-bottom:1px solid var(--line2);
+      position:sticky;top:0;z-index:10;
+      background:#fff;border-bottom:1px solid var(--line);
     }
     .nav{
       max-width:var(--max);
-      margin:0 auto;
-      padding:14px 22px;
-      display:flex; align-items:center; justify-content:space-between;
-      gap:16px;
+      margin:auto;
+      padding:14px 20px;
+      display:flex;justify-content:space-between;align-items:center;
+      flex-wrap:wrap;
     }
-    .brand{ display:flex; align-items:center; gap:12px; font-weight:900; letter-spacing:.4px; }
-    .mark{
-      width:40px; height:40px; border-radius:16px;
-      border:1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.04));
-      box-shadow: 0 14px 40px rgba(0,0,0,.45);
-      display:grid; place-items:center;
-      font-weight:900;
-    }
-    .brand small{
-      display:block; font-size:12px; color:var(--muted2);
-      font-weight:700; letter-spacing:.6px; margin-top:2px;
-    }
-    .links{
-      display:flex; gap:8px; flex-wrap:wrap;
-      font-size:13px; color:var(--muted);
-      justify-content:flex-end;
-    }
-    .links a{
-      padding:8px 10px; border-radius:999px;
-      border:1px solid transparent;
-    }
-    .links a:hover{
-      border-color:var(--line2);
-      background: rgba(255,255,255,.04);
-      color:var(--text);
-    }
+    .brand{font-weight:900}
+    .nav a{margin-left:12px;font-size:14px;color:var(--muted)}
 
-    /* Card */
-    .card{
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      border:1px solid var(--line2);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
+    .hero{
+      background:var(--sub);
+      padding:70px 20px;
+      text-align:center;
     }
-    .card.flat{
-      box-shadow:none;
-      background: rgba(255,255,255,.03);
+    .hero h1{font-size:38px;margin-bottom:12px}
+    .hero p{color:var(--muted);max-width:720px;margin:0 auto}
+    .btns{
+      margin-top:24px;
+      display:flex;gap:12px;flex-wrap:wrap;justify-content:center;
     }
-
-    /* Hero */
-    .hero{ padding:56px 0 18px; }
-    .heroGrid{
-      display:grid; grid-template-columns: 1.25fr .75fr;
-      gap:18px; align-items:stretch;
-    }
-    @media (max-width:920px){ .heroGrid{ grid-template-columns:1fr; } }
-
-    .heroMain{ padding:26px; }
-    .eyebrow{
-      color:var(--muted);
-      font-weight:800;
-      font-size:13px;
-      letter-spacing:.8px;
-      text-transform:uppercase;
-    }
-    h1{
-      margin:12px 0 12px;
-      font-size:40px;
-      line-height:1.12;
-      letter-spacing:-.6px;
-    }
-    @media (max-width:520px){ h1{ font-size:32px; } }
-    .lead{ color:var(--muted); margin:0 0 18px; max-width:72ch; }
-
-    .btns{ display:flex; gap:12px; flex-wrap:wrap; margin-top:10px; }
     .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:12px 14px;
-      border-radius:14px;
-      border:1px solid var(--line2);
-      background: rgba(255,255,255,.04);
-      font-weight:900;
-      transition:.15s transform ease, .15s background ease;
-    }
-    .btn.primary{
-      background: rgba(255,255,255,.92);
-      color:#0b0b0c;
-      border-color: transparent;
-    }
-    .btn:hover{ transform: translateY(-1px); }
-    .btn.ghost:hover{ background: rgba(255,255,255,.07); }
-
-    .chips{ display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
-    .chip{
-      font-size:12px; color:var(--muted);
-      padding:6px 10px;
+      padding:12px 18px;
       border-radius:999px;
-      border:1px solid var(--line2);
-      background: rgba(255,255,255,.03);
-    }
-
-    .kpi{
-      display:grid; grid-template-columns: repeat(2, 1fr);
-      gap:10px; margin-top:16px;
-    }
-    @media (max-width:520px){ .kpi{ grid-template-columns:1fr; } }
-    .kpi .box{
-      border:1px solid var(--line2);
-      border-radius:18px;
-      padding:12px;
-      background: rgba(0,0,0,.18);
-    }
-    .kpi .label{
-      font-size:12px; color:var(--muted2); font-weight:900;
-      letter-spacing:.6px; text-transform:uppercase;
-    }
-    .kpi .value{
-      font-size:16px; font-weight:1000; margin-top:4px;
-      letter-spacing:-.2px;
-    }
-
-    .side{ padding:22px; }
-    .badge{
+      border:1px solid var(--line);
+      background:#fff;
+      font-weight:700;
+      font-size:14px;
       display:inline-block;
-      font-size:12px;
-      padding:6px 10px;
-      border-radius:999px;
-      border:1px solid var(--line2);
-      color:var(--muted);
-      background: rgba(255,255,255,.03);
-      letter-spacing:.4px;
-      font-weight:800;
     }
-    .hr{ height:1px; background: var(--line2); margin:14px 0; }
+    .btn.primary{background:#111;color:#fff;border-color:#111}
 
-    section{ padding:18px 0; }
-    .sectionTitle{
-      font-size:20px; font-weight:1000;
-      margin:0 0 10px;
-      letter-spacing:-.2px;
-    }
-    .muted{ color:var(--muted); }
+    section{padding:60px 0;border-bottom:1px solid var(--line)}
+    h2{font-size:26px;margin-bottom:20px}
 
-    .grid3{ display:grid; grid-template-columns: repeat(3, 1fr); gap:14px; }
-    @media (max-width:920px){ .grid3{ grid-template-columns:1fr; } }
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    @media(max-width:900px){.grid3{grid-template-columns:1fr}}
 
-    .item{ padding:18px; }
-    .item h3{ margin:8px 0 8px; font-weight:1000; letter-spacing:-.2px; }
-    .list{ margin:8px 0 0; padding-left:18px; color:var(--muted); }
+    .card{border:1px solid var(--line);border-radius:var(--radius);padding:20px;background:#fff}
+    .list{padding-left:18px;color:var(--muted)}
+    .note{font-size:13px;color:#777}
+    .highlight{background:#fafafa;border:1px solid var(--line);border-radius:var(--radius);padding:16px;margin-top:16px}
 
-    .highlight{
-      border:1px solid rgba(255,255,255,.18);
-      background: rgba(255,255,255,.04);
-      padding:12px 14px;
-      border-radius:18px;
-    }
-
-    .faq details{
-      border:1px solid var(--line2);
-      border-radius:18px;
-      padding:12px 14px;
-      background: rgba(255,255,255,.03);
-      margin-bottom:10px;
-    }
-    .faq summary{ cursor:pointer; font-weight:1000; }
-    .note{ font-size:13px; color:var(--muted2); }
-
-    .footer{
-      margin-top:22px;
-      padding:18px 0 34px;
-      border-top:1px solid var(--line2);
-      color:var(--muted2);
-      font-size:13px;
-    }
+    footer{background:#fafafa;padding:40px 20px;text-align:center;font-size:13px;color:#777}
   </style>
 </head>
 
 <body>
-  <header>
-    <div class="nav">
-      <div class="brand">
-        <div class="mark" aria-hidden="true">BZ</div>
-        <div>
-          BALLERZOOスクール
-          <small>BASKETBALL SCHOOL</small>
-        </div>
-      </div>
-      <nav class="links">
-        <a href="#about">概要</a>
-        <a href="#type">参加形態</a>
-        <a href="#schedule">日程</a>
-        <a href="#price">料金</a>
-        <a href="#notice">注意事項</a>
-        <a href="#contact">お問い合わせ</a>
-      </nav>
+
+<header>
+  <div class="nav">
+    <div class="brand">BALLERZOOスクール</div>
+    <div>
+      #about概要</a>
+      #type参加形態</a>
+      #schedule日程</a>
+      #price料金</a>
+      #contactお問い合わせ</a>
     </div>
-  </header>
+  </div>
+</header>
 
-  <main class="wrap">
-    <!-- HERO -->
-    <div class="hero">
-      <div class="heroGrid">
-        <div class="card heroMain">
-          <div class="eyebrow">Kaga / Basketball / Growth</div>
-          <h1>黒と白で、<br>“上達”が伝わるスクール。</h1>
-          <p class="lead">
-            BALLERZOOスクールは、<b>小学5年生〜中学3年生（男女）</b>を対象に、
-            基礎から実戦まで「考えてプレーする力」を育てます。<br>
-            <span class="muted">※4年生以下はご相談ください。</span>
-          </p>
+<section class="hero">
+  <div class="wrap">
+    <h1>一生懸命を、未来に繋ぐ。</h1>
+    <p>バスケットボールを通して、考え、挑戦し続ける力を育てます。</p>
+    <div class="btns">
+      #contact class="btn primary">体験・お問い合わせ</a>
+      #schedule活動日程を見る</a>
+    </div>
+  </div>
+</section>
 
-          <div class="btns">
-            <a class="btn primary" href="#contact">体験申込み・お問い合わせ</a>
-            <a class="btn ghost" href="#schedule">活動日程を見る</a>
-          </div>
-
-          <div class="chips">
-            <span class="chip">初回体験無料</span>
-            <span class="chip">1回500円で積算</span>
-            <span class="chip">月謝上限あり</span>
-            <span class="chip">平日 19:00–21:00</span>
-            <span class="chip">片山津中／錦城中 体育館</span>
-          </div>
-
-          <div class="kpi">
-            <div class="box"><div class="label">Trial</div><div class="value">初回のみ無料</div></div>
-            <div class="box"><div class="label">Price</div><div class="value">1回 500円（積算）</div></div>
-            <div class="box"><div class="label">Cap (Elem.)</div><div class="value">小学生 上限 2,000円/月</div></div>
-            <div class="box"><div class="label">Cap (Jr.)</div><div class="value">中学生 上限 4,000円/月</div></div>
-          </div>
-        </div>
-
-        <div class="card side">
-          <span class="badge">INFO</span>
-          <h3 style="margin:12px 0 8px; font-weight:1000;">お知らせ</h3>
-          <ul class="list">
-            <li><b>体験：初回無料（要連絡）</b></li>
-            <li>練習時間：<b>平日 19:00–21:00</b></li>
-            <li>会場都合等で<b>急に練習が休みになる場合があります</b></li>
-          </ul>
-
-          <div class="hr"></div>
-
-          <span class="badge">LINKS</span>
-          <div class="btns" style="margin-top:10px;">
-            <a class="btn primary" href="https://line.me/ti/p/bASKCL0GHk" target="_blank" rel="noopener">LINEで問い合わせ（代表）</a>
-            <a class="btn ghost" href="https://www.instagram.com/ballerzoo.u15?igsh=d3d0bDE3ZWh6cXQ5&utm_source=qr" target="_blank" rel="noopener">チームInstagram</a>
-            <a class="btn ghost" href="https://www.instagram.com/coach.a.u1?igsh=MWJsaDd1a3JyeDA2eA%3D%3D&utm_source=qr" target="_blank" rel="noopener">代表Instagram</a>
-            <a class="btn ghost" href="https://ameblo.jp/tsunagu-coach-a/" target="_blank" rel="noopener">代表ブログ</a>
-          </div>
-
-          <p class="note" style="margin-top:12px;">
-            ※リンクは別タブで開きます
-          </p>
-        </div>
+<section id="about">
+  <div class="wrap">
+    <h2>スクール概要</h2>
+    <div class="grid3">
+      <div class="card">
+        <h3>対象</h3>
+        <p>小学5年生〜中学3年生（男女）<br><span class="note">※4年生以下はご相談ください</span></p>
+      </div>
+      <div class="card">
+        <h3>会場</h3>
+        <p>片山津中学校 体育館<br>錦城中学校 体育館</p>
+      </div>
+      <div class="card">
+        <h3>練習時間</h3>
+        <p>平日 19:00〜21:00<br>日曜 18:00〜20:00</p>
       </div>
     </div>
+  </div>
+</section>
 
-    <!-- ABOUT -->
-    <section id="about">
-      <h2 class="sectionTitle">スクール概要</h2>
-      <div class="grid3">
-        <div class="card flat item">
-          <h3>対象</h3>
-          <p class="muted">
-            小学5年生〜中学3年生（男女）<br>
-            <span class="note">※4年生以下はご相談ください</span>
-          </p>
-        </div>
-        <div class="card flat item">
-          <h3>会場</h3>
-          <p class="muted">
-            片山津中学校 体育館<br>
-            錦城中学校 体育館
-          </p>
-        </div>
-        <div class="card flat item">
-          <h3>体験</h3>
-          <p class="muted">
-            初回のみ無料<br>
-            2回目以降：1回 500円
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- TYPE -->
-    <section id="type">
-      <h2 class="sectionTitle">参加形態について</h2>
-      <div class="card" style="padding:20px;">
-        <p class="muted" style="margin-top:0;">
-          BALLERZOOでは、目的に応じて <b>2つの参加形態</b> をご用意しています。
-        </p>
-
-        <div class="grid3" style="margin-top:14px;">
-          <div class="card flat item">
-            <h3>スクール生（練習参加）</h3>
-            <ul class="list">
-              <li>練習のみ参加する形態</li>
-              <li><b>他チーム所属可</b>（別チームに所属していても参加できます）</li>
-              <li>飛び入り参加も可能</li>
-              <li>基礎力・個人スキルアップが目的</li>
-            </ul>
-            <p class="note" style="margin-top:8px;">
-              ※「練習の場」として活用できます
-            </p>
-          </div>
-
-          <div class="card flat item">
-            <h3>クラブ生（チーム所属）</h3>
-            <ul class="list">
-              <li>BALLERZOOに所属し、チーム活動にも参加</li>
-              <li><b>他チーム所属不可</b></li>
-              <li>大会・練習試合などに参加</li>
-            </ul>
-            <p class="note" style="margin-top:8px;">
-              ※練習内容や目的に応じて、<b>クラブ生のみを対象とした練習</b>を別途実施する場合があります。
-            </p>
-          </div>
-
-          <div class="card flat item">
-            <h3>クラブ生の費用</h3>
-            <ul class="list">
-              <li>月謝：<b>5,000円</b></li>
-              <li>年間活動費：<b>15,000円</b></li>
-            </ul>
-            <p class="note" style="margin-top:8px;">
-              ※登録・運営・備品等を含みます
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SCHEDULE -->
-    <section id="schedule">
-      <h2 class="sectionTitle">活動日程</h2>
-      <div class="card" style="padding:20px;">
-        <p class="muted" style="margin-top:0;">
-          練習時間は <b>平日 19:00–21:00</b> です（会場により変更の場合あり）。
-        </p>
+<section id="type">
+  <div class="wrap">
+    <h2>参加形態</h2>
+    <div class="grid3">
+      <div class="card">
+        <h3>スクール生</h3>
         <ul class="list">
-          <li>月：19:00–21:00（錦城中学校 体育館）</li>
-          <li>水：19:00–21:00（片山津中学校 体育館）</li>
-          <li>金：19:00–21:00（片山津中学校 体育館）</li>
-        </ul>
-
-        <div class="highlight" style="margin-top:14px;">
-          <b>重要：</b>会場都合等で <b>急に練習が休みになる場合があります</b>。<br>
-          <span class="muted">体験・見学をご希望の方は、必ず事前にご連絡ください。</span>
-        </div>
-
-        <p class="note" style="margin-top:10px;">
-          最新情報は代表LINE・SNS・フォームからのご連絡後にご案内します。
-        </p>
-      </div>
-    </section>
-
-    <!-- PRICE -->
-    <section id="price">
-      <h2 class="sectionTitle">料金</h2>
-      <div class="card" style="padding:20px;">
-        <div class="highlight">
-          <b>スクール生（練習参加）の料金：</b>参加回数分だけ積算され、月ごとに上限があります。<br>
-          <span class="muted">例：月4回参加 → 500円×4回＝2,000円（小学生上限）</span>
-        </div>
-
-        <div class="grid3" style="margin-top:14px;">
-          <div class="card flat item">
-            <h3>体験</h3>
-            <p class="muted">初回のみ無料</p>
-            <p class="note">持ち物：運動できる服・室内シューズ・水筒・タオル</p>
-          </div>
-
-          <div class="card flat item">
-            <h3>小学生（スクール生）</h3>
-            <ul class="list">
-              <li>1回：500円</li>
-              <li><b>月謝上限：2,000円</b></li>
-            </ul>
-            <p class="note">月4回以上参加しても2,000円が上限</p>
-          </div>
-
-          <div class="card flat item">
-            <h3>中学生（スクール生）</h3>
-            <ul class="list">
-              <li>1回：500円</li>
-              <li><b>月謝上限：4,000円</b></li>
-            </ul>
-            <p class="note">月8回以上参加しても4,000円が上限</p>
-          </div>
-        </div>
-
-        <p class="note" style="margin-top:10px;">
-          ※大会・練習試合・遠征等がある場合は、実費が発生する場合があります。
-        </p>
-      </div>
-    </section>
-
-    <!-- NOTICE -->
-    <section id="notice">
-      <h2 class="sectionTitle">注意事項</h2>
-      <div class="card" style="padding:20px;">
-        <ul class="list">
-          <li><b>体温が37.5度以上ある場合は、練習への参加はできません（見学も不可）</b>とします。</li>
-          <li><b>スポーツ保険は各自でご加入</b>をお願いします。</li>
-          <li>当スクールの練習において発生した<b>事故・怪我・病気等につきましては、一切の責任を負いかねます</b>。</li>
-          <li>ご質問・ご相談がありましたら、<b>代表：網谷（090-9767-6975）</b>までご連絡ください。</li>
+          <li>練習のみ参加</li>
+          <li>他チーム所属可</li>
+          <li>飛び入り参加OK</li>
         </ul>
       </div>
-    </section>
+      <div class="card">
+        <h3>クラブ生</h3>
+        <ul class="list">
+          <li>BALLERZOOに所属</li>
+          <li>他チーム所属不可</li>
+          <li>大会・練習試合に参加</li>
+        </ul>
+        <p class="note">※クラブ生のみの練習を行う場合があります</p>
+      </div>
+      <div class="card">
+        <h3>クラブ生費用</h3>
+        <ul class="list">
+          <li>月謝：5,000円</li>
+          <li>年間活動費：15,000円</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- FAQ -->
-    <section id="faq">
-      <h2 class="sectionTitle">よくある質問（FAQ）</h2>
-      <div class="faq">
-        <details open>
-          <summary>初心者でも大丈夫ですか？</summary>
-          <div class="muted" style="margin-top:8px;">
-            大丈夫です。基礎から段階的に進め、学年やレベルに合わせて調整します。
-          </div>
-        </details>
+<section id="schedule">
+  <div class="wrap">
+    <h2>活動日程</h2>
+    <ul class="list">
+      <li>月：19:00〜21:00（錦城中学校）</li>
+      <li>水：19:00〜21:00（片山津中学校）</li>
+      <li>金：19:00〜21:00（片山津中学校）</li>
+      <li><b>日：18:00〜20:00（片山津中学校）</b></li>
+    </ul>
+    <div class="highlight">
+      <b>重要：</b>練習が急に休みになる場合があります。体験・見学は必ず事前にご連絡ください。
+    </div>
+  </div>
+</section>
 
-        <details>
-          <summary>体験参加はいつできますか？</summary>
-          <div class="muted" style="margin-top:8px;">
-            初回のみ無料で体験できます。練習が急に休みになる場合があるため、必ず事前にご連絡ください。
-          </div>
-        </details>
+<section id="price">
+  <div class="wrap">
+    <h2>料金</h2>
+    <div class="grid3">
+      <div class="card"><h3>体験</h3><p>初回のみ無料</p></div>
+      <div class="card"><h3>小学生</h3><p>1回500円<br><b>月上限 2,000円</b></p></div>
+      <div class="card"><h3>中学生</h3><p>1回500円<br><b>月上限 4,000円</b></p></div>
+    </div>
+    <div class="highlight">
+      <b>お支払い方法</b>
+      <ul class="list">
+        <li>練習時に500円持参OK</li>
+        <li>継続参加の場合は集金袋を用意します</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-        <details>
-          <summary>スクール生とクラブ生の違いは？</summary>
-          <div class="muted" style="margin-top:8px;">
-            スクール生は練習参加が中心で<b>他チーム所属可</b>です。クラブ生はBALLERZOOに所属してチーム活動に参加し、<b>他チーム所属不可</b>となります。
-          </div>
-        </details>
+<section id="contact">
+  <div class="wrap">
+    <h2>体験・お問い合わせ</h2>
+    <p>①学年 ②バスケ経験 ③希望日 を添えてご連絡ください。</p>
 
-        <details>
-          <summary>料金の支払いはどうなりますか？</summary>
+    <div class="btns">
+      https://forms.gle/88f2Bqe2GeTyRSsu9体験・お問い合わせフォーム</a>
+      https://line.me/ti/p/bASKCL0GHkLINEで問い合わせ</a>
+      0405amiya@gmail.comメールで問い合わせ</a>
+    </div>
+
+    <div class="btns" style="margin-top:16px;">
+      https://www.instagram.com/ballerzoo.u15
+      https://www.instagram.com/coach.a.u1
+      https://ameblo.jp/tsunagu-coach-a/代表ブログ</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © BALLERZOO School
+</footer>
+
+</body>
+</html>
