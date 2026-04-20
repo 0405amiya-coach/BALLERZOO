@@ -1,141 +1,102 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BALLERZOOスクール｜バスケットボールスクール</title>
-  <meta name="description" content="BALLERZOOスクール。小学5年生〜中学3年生対象。体験初回無料。平日19:00〜21:00・日曜18:00〜20:00。">
-  <meta name="theme-color" content="#ffffff">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BALLERZOOスクール｜バスケットボールスクール</title>
+<meta name="description" content="BALLERZOOスクール。小学5年生〜中学3年生対象。体験初回無料。平日19:00〜21:00・日曜18:00〜20:00。">
+<meta name="theme-color" content="#ffffff">
 
-  <style>
-    :root{
-      --bg:#ffffff;
-      --sub:#f6f6f7;
-      --text:#111;
-      --muted:#555;
-      --line:#e5e5e5;
-      --radius:14px;
-      --max:1100px;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP",sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.75;
-    }
-    a{text-decoration:none;color:inherit}
-    .wrap{max-width:var(--max);margin:auto;padding:20px}
+<style>
+:root{
+  --bg:#ffffff;
+  --sub:#f6f6f7;
+  --text:#111;
+  --muted:#555;
+  --line:#e5e5e5;
+  --radius:14px;
+  --max:1100px;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP",sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.75;
+}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:var(--max);margin:auto;padding:20px}
 
-    /* header */
-    header{
-      position:sticky;top:0;z-index:10;
-      background:#fff;border-bottom:1px solid var(--line);
-    }
-    .nav{
-      max-width:var(--max);
-      margin:auto;
-      padding:14px 20px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      flex-wrap:wrap;
-    }
-    .brand{font-weight:900}
-    .nav a{margin-left:14px;font-size:14px;color:var(--muted)}
+/* header */
+header{
+  position:sticky;top:0;z-index:10;
+  background:#fff;border-bottom:1px solid var(--line);
+}
+.nav{
+  max-width:var(--max);
+  margin:auto;
+  padding:14px 20px;
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;
+}
+.brand{font-weight:900}
+.nav a{margin-left:14px;font-size:14px;color:var(--muted)}
 
-    /* hero（写真透かし） */
-    .hero{
-      position:relative;
-      padding:80px 20px;
-      text-align:center;
-      background-image: url("はづき.jfif");
-      background-size: cover;
-      background-position: center;
-    }
-    .hero::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background: rgba(255,255,255,0.75);
-    }
-    .hero .wrap{
-      position:relative;
-    }
-    .hero h1{
-      font-size:38px;
-      margin-bottom:12px;
-    }
-    .hero p{
-      color:var(--muted);
-      max-width:720px;
-      margin:0 auto;
-    }
+/* hero（写真透かし） */
+.hero{
+  position:relative;
+  padding:80px 20px;
+  text-align:center;
+  background-image:url("はづき.jfif");
+  background-size:cover;
+  background-position:center 10%; /* スマホ最適 */
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(255,255,255,0.75);
+}
+.hero .wrap{position:relative}
+.hero h1{font-size:38px;margin-bottom:12px}
+.hero p{color:var(--muted);max-width:720px;margin:0 auto}
 
-    .btns{
-      margin-top:24px;
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      justify-content:center;
-    }
-    .btn{
-      padding:12px 18px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:#fff;
-      font-weight:700;
-      font-size:14px;
-      display:inline-block;
-    }
-    .btn.primary{
-      background:#111;
-      color:#fff;
-      border-color:#111;
-    }
+.btns{
+  margin-top:24px;
+  display:flex;gap:12px;flex-wrap:wrap;justify-content:center;
+}
+.btn{
+  padding:12px 18px;border-radius:999px;
+  border:1px solid var(--line);background:#fff;
+  font-weight:700;font-size:14px;display:inline-block;
+}
+.btn.primary{background:#111;color:#fff;border-color:#111}
 
-    section{
-      padding:60px 0;
-      border-bottom:1px solid var(--line);
-    }
-    h2{font-size:26px;margin-bottom:20px}
+/* PC表示のみ 背景位置調整 */
+@media (min-width: 900px){
+  .hero{
+    background-position:center 20%;
+  }
+}
 
-    .grid3{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:20px;
-    }
-    @media(max-width:900px){
-      .grid3{grid-template-columns:1fr}
-      .hero h1{font-size:30px}
-    }
+/* layout */
+section{padding:60px 0;border-bottom:1px solid var(--line)}
+h2{font-size:26px;margin-bottom:20px}
 
-    .card{
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      padding:20px;
-      background:#fff;
-    }
-    .list{padding-left:18px;color:var(--muted)}
-    .note{font-size:13px;color:#777}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:900px){
+  .grid3{grid-template-columns:1fr}
+  .hero h1{font-size:30px}
+}
 
-    .highlight{
-      background:#fafafa;
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      padding:16px;
-      margin-top:16px;
-    }
+.card{border:1px solid var(--line);border-radius:var(--radius);padding:20px;background:#fff}
+.list{padding-left:18px;color:var(--muted)}
+.note{font-size:13px;color:#777}
+.highlight{background:#fafafa;border:1px solid var(--line);border-radius:var(--radius);padding:16px;margin-top:16px}
 
-    footer{
-      background:#fafafa;
-      padding:40px 20px;
-      text-align:center;
-      font-size:13px;
-      color:#777;
-    }
-  </style>
+footer{background:#fafafa;padding:40px 20px;text-align:center;font-size:13px;color:#777}
+</style>
 </head>
 
 <body>
@@ -226,7 +187,7 @@
       <li><b>日：18:00〜20:00（片山津中学校）</b></li>
     </ul>
     <div class="highlight">
-      <b>重要：</b>会場都合等により練習が急に休みになる場合があります。体験・見学は必ず事前にご連絡ください。
+      <b>重要：</b>会場都合等で練習が急に休みになる場合があります。体験・見学は必ず事前にご連絡ください。
     </div>
   </div>
 </section>
