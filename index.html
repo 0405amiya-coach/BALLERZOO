@@ -3,21 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BALLERZOOスクール｜バスケットボールスクール（加賀市）</title>
+  <title>BALLERZOOスクール｜バスケットボールスクール（石川県加賀市）</title>
 
-  <!-- SEO：地域＋種別を明確化 -->
   <meta name="description" content="BALLERZOOスクールは、石川県加賀市を拠点に活動する小学生・中学生向けのバスケットボールスクールです。体験初回無料。平日19:00〜21:00・日曜18:00〜20:00。">
   <meta name="theme-color" content="#ffffff">
 
-  <!-- favicon（あなたのリポジトリに存在確認済み） -->
+  <!-- ✅ favicon（リポジトリ直下に favicon.ico がある前提） -->
   <link rel="icon" href="favicon.ico" sizes="any">
-
-  <!-- OGP（URLをSNS/LINEで送った時の見栄え用：任意） -->
-  <meta property="og:title" content="BALLERZOOスクール">
-  <meta property="og:description" content="一生懸命を、未来に繋ぐ。バスケットボールを通して、考え、挑戦し続ける力を育てます。">
-  <meta property="og:type" content="website">
-  <!-- もしロゴ画像を置いているなら差し替え可：例）og:imageにロゴ白正方形.jpg -->
-  <!-- <meta property="og:image" content="ロゴ白正方形.jpg"> -->
 
   <style>
     :root{
@@ -73,9 +65,10 @@
       position:relative;
       padding:80px 20px;
       text-align:center;
+
       background-image:url("はづき.jfif");
       background-size:cover;
-      background-position:center 10%; /* スマホはこの位置（完ぺき維持） */
+      background-position:center 10%; /* スマホはこのまま（完ぺき維持） */
     }
     .hero::before{
       content:"";
@@ -90,24 +83,21 @@
     }
     .hero p{
       color:var(--muted);
-      max-width:720px;
+      max-width:760px;
       margin:0 auto;
-    }
-    /* ✅ 追加した1行を“控えめに”見せる（SEOは効く＆デザインは崩さない） */
-    .hero .hero-loc{
-      margin-top:10px;
-      font-size:13px;
-      color:#777;
     }
 
     /* PC表示のみ：上すぎた対策（少し下げる） */
     @media (min-width: 900px){
       .hero{ background-position:center 30%; }
     }
+    @media (max-width: 900px){
+      .hero h1{ font-size:30px; }
+    }
 
     /* Buttons */
     .btns{
-      margin-top:24px;
+      margin-top:26px;
       display:flex;
       gap:12px;
       flex-wrap:wrap;
@@ -145,7 +135,6 @@
     }
     @media (max-width:900px){
       .grid3{ grid-template-columns:1fr; }
-      .hero h1{ font-size:30px; }
     }
 
     .card{
@@ -171,13 +160,13 @@
       margin-top:16px;
     }
 
-    /* ✅ Auto-scroll Gallery（6枚） */
+    /* Gallery（自動横スクロール） */
     .gallery-marquee{
-      margin-top:18px;
       border:1px solid var(--line);
       border-radius:12px;
-      background:#fff;
       overflow:hidden;
+      background:#fff;
+      margin-top:18px;
     }
     .gallery-track{
       display:flex;
@@ -188,9 +177,9 @@
     .gallery-track a{
       flex:0 0 auto;
       display:block;
+      border:1px solid var(--line);
       border-radius:12px;
       overflow:hidden;
-      border:1px solid var(--line);
       background:#fff;
     }
     .gallery-track img{
@@ -211,7 +200,7 @@
       }
     }
 
-    /* Bottom image section */
+    /* Bottom image */
     #bottom-message{
       border-bottom:none;
       padding:30px 0 0;
@@ -259,9 +248,6 @@
   <div class="wrap">
     <h1>一生懸命を、未来に繋ぐ。</h1>
     <p>バスケットボールを通して、考え、挑戦し続ける力を育てます。</p>
-
-    <!-- ✅ ご指定の1行：サブコピー直下に追加（SEO＆初見の理解） -->
-    <p class="hero-loc">BALLERZOOスクールは、石川県加賀市を拠点に活動する小学生・中学生向けのバスケットボールスクールです。</p>
 
     <div class="btns">
       <a class="btn primary" href="#contact">体験・お問い合わせ</a>
@@ -334,6 +320,7 @@
       <li>金：19:00〜21:00（片山津中学校 体育館）</li>
       <li><b>日：18:00〜20:00（片山津中学校 体育館）</b></li>
     </ul>
+
     <div class="highlight">
       <b>重要：</b>会場都合等により、練習が急に休みになる場合があります。<br>
       体験・見学は必ず事前にご連絡ください。
@@ -349,6 +336,7 @@
       <div class="card"><h3>小学生</h3><p>1回500円<br><b>月上限 2,000円</b></p></div>
       <div class="card"><h3>中学生</h3><p>1回500円<br><b>月上限 4,000円</b></p></div>
     </div>
+
     <div class="highlight">
       <b>お支払い方法</b>
       <ul class="list">
@@ -359,7 +347,6 @@
   </div>
 </section>
 
-<!-- ✅ ギャラリー（あなたの実ファイル名に完全一致） -->
 <section id="gallery">
   <div class="wrap">
     <h2>Gallery</h2>
@@ -368,22 +355,22 @@
     <div class="gallery-marquee" aria-label="写真ギャラリー（自動スクロール）">
       <div class="gallery-track" id="galleryTrack">
         <a href="imagesgallery-01.jpg" target="_blank" rel="noopener">
-          <img src="imagesgallery-01.jpg" alt="ギャラリー 1" loading="lazy">
+          <img src="imagesgallery-01.jpg" alt="ギャラリー1" loading="lazy">
         </a>
         <a href="imagesgallery-02.jpg" target="_blank" rel="noopener">
-          <img src="imagesgallery-02.jpg" alt="ギャラリー 2" loading="lazy">
+          <img src="imagesgallery-02.jpg" alt="ギャラリー2" loading="lazy">
         </a>
         <a href="imagesgallery-03.jpg" target="_blank" rel="noopener">
-          <img src="imagesgallery-03.jpg" alt="ギャラリー 3" loading="lazy">
+          <img src="imagesgallery-03.jpg" alt="ギャラリー3" loading="lazy">
         </a>
         <a href="imagesgallery-04.jpg" target="_blank" rel="noopener">
-          <img src="imagesgallery-04.jpg" alt="ギャラリー 4" loading="lazy">
+          <img src="imagesgallery-04.jpg" alt="ギャラリー4" loading="lazy">
         </a>
         <a href="imagesgallery-05.jpg" target="_blank" rel="noopener">
-          <img src="imagesgallery-05.jpg" alt="ギャラリー 5" loading="lazy">
+          <img src="imagesgallery-05.jpg" alt="ギャラリー5" loading="lazy">
         </a>
         <a href="imagesgallery-06.jpg" target="_blank" rel="noopener">
-          <img src="imagesgallery-06.jpg" alt="ギャラリー 6" loading="lazy">
+          <img src="imagesgallery-06.jpg" alt="ギャラリー6" loading="lazy">
         </a>
       </div>
     </div>
@@ -394,22 +381,43 @@
   </div>
 </section>
 
+<!-- ✅ 指定の位置：ギャラリーの下／お問い合わせの直前 -->
+<section id="about-ballerzoo">
+  <div class="wrap">
+    <h2>BALLERZOOとは</h2>
+    <div class="card">
+      <p style="white-space:pre-line; margin:0; color:#555; line-height:1.9;">
+BALLERZOOスクールは、
+石川県加賀市を拠点に活動する
+小学生・中学生向けのバスケットボールスクールです。
+私たちは、技術の上達だけでなく、
+一生懸命に向き合った時間そのものが、
+未来に繋がる力になると考えています。
+うまくいかない悔しさも、挑戦する勇気も、
+すべてが成長の大切な一部です。
+BALLERZOOスクールは、
+「一生懸命を、未来に繋ぐ。」場所であり続けたいと考えています。
+      </p>
+    </div>
+  </div>
+</section>
+
 <section id="contact">
   <div class="wrap">
     <h2>体験・お問い合わせ</h2>
-    <p>体験希望の方は、①学年 ②バスケ経験 ③希望日 を添えてご連絡ください。</p>
+    <p class="note">体験希望の方は、①学年 ②バスケ経験 ③希望日 を添えてご連絡ください。</p>
 
     <div class="btns">
-      <a class="btn primary" href="https://forms.gle/88f2Bqe2GeTyRSsu9" target="_blank" rel="noopener">体験・お問い合わせフォーム（24時間受付）</a>
+      <a class="btn primary" href="https://forms.gle/88f2Bqe2GeTyRSsu9" target="_blank" rel="noopener">フォーム（24時間受付）</a>
       <a class="btn" href="https://line.me/ti/p/bASKCL0GHk" target="_blank" rel="noopener">LINE</a>
-      <a class="btn" href="mailto:0405amiya@gmail.com?subject=%E3%80%90%E4%BD%93%E9%A8%93%E5%B8%8C%E6%9C%9B%E3%80%91BALLERZOO%E3%82%B9%E3%82%AF%E3%83%BC%E3%83%AB&body=%E3%80%90%E5%AD%A6%E5%B9%B4%E3%80%91%0D%0A%E3%80%90%E3%83%90%E3%82%B9%E3%82%B1%E7%B5%8C%E9%A8%93%E3%80%91%0D%0A%E3%80%90%E5%B8%8C%E6%9C%9B%E6%97%A5%E3%80%91%0D%0A%E3%80%90%E3%81%94%E8%B3%AA%E5%95%8F%E3%80%91">メール</a>
+      <a class="btn" href="mailto:0405amiya@gmail.com?subject=%E3%80%90%E4%BD%93%E9%A8%93%E5%B8%8C%E6%9C%9B%E3%80%91BALLERZOO%E3%82%B9%E3%82%AF%E3%83%BC%E3%83%AB&body=%E3%80%90%E5%AD%A6%E5%B9%B4%E3%80%91%0D%0A%E3%80%90%E3%83%90%E3%82%B9%E3%82%B1%E7%B5%8C%E9%A8%93%E3%80%91%0D%0A%E3%80%90%E5%B8%8C%E6%9C%9B%E6%97%A5%E3%80%91%0D%0A%E3%80%90%E3%81%94%E8%B3%AA%E5%95%8F%E3%80%91" >メール</a>
+      <a class="btn" href="coach.html">Coach</a>
     </div>
 
     <div class="btns" style="margin-top:16px;">
       <a class="btn" href="https://www.instagram.com/ballerzoo.u15" target="_blank" rel="noopener">チームInstagram</a>
       <a class="btn" href="https://www.instagram.com/coach.a.u1" target="_blank" rel="noopener">代表Instagram</a>
       <a class="btn" href="https://ameblo.jp/tsunagu-coach-a/" target="_blank" rel="noopener">代表ブログ</a>
-      <a class="btn" href="coach.html">Coach</a>
     </div>
   </div>
 </section>
@@ -424,13 +432,12 @@
   © BALLERZOO School
 </footer>
 
-<!-- ✅ ギャラリー自動スクロール（ループ） -->
 <script>
 (function(){
   const track = document.getElementById('galleryTrack');
   if(!track) return;
 
-  // ループのために中身を複製（1回）
+  // ループ用に複製（1回だけ）
   track.innerHTML += track.innerHTML;
 
   let x = 0;
@@ -438,7 +445,7 @@
   const speed = 0.35;
 
   let halfWidth = 0;
-  const measure = () => halfWidth = track.scrollWidth / 2;
+  const measure = () => { halfWidth = track.scrollWidth / 2; };
   window.addEventListener('load', measure);
   window.addEventListener('resize', measure);
 
@@ -452,7 +459,7 @@
   function tick(){
     if(!paused){
       x += speed;
-      if(x >= halfWidth) x = 0;
+      if(halfWidth > 0 && x >= halfWidth) x = 0;
       track.style.transform = `translateX(${-x}px)`;
     }
     requestAnimationFrame(tick);
