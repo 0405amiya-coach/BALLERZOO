@@ -1,9 +1,7 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BALLERZOOスクール｜バスケットボールスクール（石川県加賀市）</title>
+  <metaスクール｜バスケットボールスクール（石川県加賀市）</title>  <meta charset="utf-8">
 
   <meta name="description" content="BALLERZOOスクールは、石川県加賀市を拠点に活動する小学生・中学生向けのバスケットボールスクールです。体験初回無料。平日19:00〜21:00・日曜18:00〜20:00。">
   <meta name="theme-color" content="#ffffff">
@@ -65,7 +63,6 @@
       position:relative;
       padding:80px 20px;
       text-align:center;
-
       background-image:url("はづき.jfif");
       background-size:cover;
       background-position:center 10%; /* スマホはこのまま */
@@ -87,7 +84,7 @@
       margin:0 auto;
     }
 
-    /* PC表示のみ：背景位置を少し下げる（上すぎ対策） */
+    /* PC表示のみ：上すぎた対策（少し下げる） */
     @media (min-width: 900px){
       .hero{ background-position:center 30%; }
     }
@@ -142,7 +139,6 @@
       font-size:26px;
       margin:0 0 20px;
     }
-
     .grid3{
       display:grid;
       grid-template-columns:repeat(3,1fr);
@@ -175,22 +171,14 @@
       margin-top:16px;
     }
 
-    /* Gallery（手動スクロール + 自動スクロール） */
+    /* Gallery（完全エンドレス：overflowは隠す） */
     .gallery-marquee{
       border:1px solid var(--line);
       border-radius:12px;
+      overflow:hidden;   /* ✅ エンドレス優先のため hidden */
       background:#fff;
-      overflow-x:auto;   /* ✅ 手動スクロール可 */
-      overflow-y:hidden;
-      -webkit-overflow-scrolling:touch; /* iPhone慣性 */
       margin-top:18px;
     }
-    .gallery-marquee::-webkit-scrollbar{ height:8px; }
-    .gallery-marquee::-webkit-scrollbar-thumb{
-      background:#d0d0d0;
-      border-radius:999px;
-    }
-
     .gallery-track{
       display:flex;
       gap:12px;
@@ -375,14 +363,26 @@
     <h2>Gallery</h2>
     <p class="note">練習の雰囲気が伝わるように、写真を一部掲載しています。</p>
 
-    <div class="gallery-marquee" aria-label="写真ギャラリー（自動スクロール＋手動操作可）">
+    <div class="gallery-marquee" aria-label="写真ギャラリー（エンドレス）">
       <div class="gallery-track" id="galleryTrack">
-        <a href="imagesgallery-01.jpg" target="_blank" rel="noopener"><img src="imagesgallery-01.jpg" alt="ギャラリー1" loading="lazy"></a>
-        <a href="imagesgallery-02.jpg" target="_blank" rel="noopener"><img src="imagesgallery-02.jpg" alt="ギャラリー2" loading="lazy"></a>
-        <a href="imagesgallery-03.jpg" target="_blank" rel="noopener"><img src="imagesgallery-03.jpg" alt="ギャラリー3" loading="lazy"></a>
-        <a href="imagesgallery-04.jpg" target="_blank" rel="noopener"><img src="imagesgallery-04.jpg" alt="ギャラリー4" loading="lazy"></a>
-        <a href="imagesgallery-05.jpg" target="_blank" rel="noopener"><img src="imagesgallery-05.jpg" alt="ギャラリー5" loading="lazy"></a>
-        <a href="imagesgallery-06.jpg" target="_blank" rel="noopener"><img src="imagesgallery-06.jpg" alt="ギャラリー6" loading="lazy"></a>
+        <a href="imagesgallery-01.jpg" target="_blank" rel="noopener">
+          <img src="imagesgallery-01.jpg" alt="練習風景 1" loading="lazy">
+        </a>
+        <a href="imagesgallery-02.jpg" target="_blank" rel="noopener">
+          <img src="imagesgallery-02.jpg" alt="練習風景 2" loading="lazy">
+        </a>
+        <a href="imagesgallery-03.jpg" target="_blank" rel="noopener">
+          <img src="imagesgallery-03.jpg" alt="練習風景 3" loading="lazy">
+        </a>
+        <a href="imagesgallery-04.jpg" target="_blank" rel="noopener">
+          <img src="imagesgallery-04.jpg" alt="練習風景 4" loading="lazy">
+        </a>
+        <a href="imagesgallery-05.jpg" target="_blank" rel="noopener">
+          <img src="imagesgallery-05.jpg" alt="練習風景 5" loading="lazy">
+        </a>
+        <a href="imagesgallery-06.jpg" target="_blank" rel="noopener">
+          <img src="imagesgallery-06.jpg" alt="練習風景 6" loading="lazy">
+        </a>
       </div>
     </div>
 
@@ -392,7 +392,7 @@
   </div>
 </section>
 
-<!-- ✅ 指定位置：ギャラリーの下／お問い合わせの直前（先頭の無駄改行なし） -->
+<!-- ✅ ギャラリーの下／お問い合わせ直前：改行の無駄なし -->
 <section id="about-ballerzoo">
   <div class="wrap">
     <h2>BALLERZOOとは</h2>
@@ -416,14 +416,12 @@ BALLERZOOスクールは、
     <h2>体験・お問い合わせ</h2>
     <p class="note">体験希望の方は、①学年 ②バスケ経験 ③希望日 を添えてご連絡ください。</p>
 
-    <!-- ✅ お問い合わせ（スマホで同幅整列） -->
     <div class="btns">
       <a class="btn primary" href="https://forms.gle/88f2Bqe2GeTyRSsu9" target="_blank" rel="noopener">フォーム（24時間受付）</a>
       <a class="btn" href="https://line.me/ti/p/bASKCL0GHk" target="_blank" rel="noopener">LINE</a>
       <a class="btn" href="mailto:0405amiya@gmail.com?subject=%E3%80%90%E4%BD%93%E9%A8%93%E5%B8%8C%E6%9C%9B%E3%80%91BALLERZOO%E3%82%B9%E3%82%AF%E3%83%BC%E3%83%AB&body=%E3%80%90%E5%AD%A6%E5%B9%B4%E3%80%91%0D%0A%E3%80%90%E3%83%90%E3%82%B9%E3%82%B1%E7%B5%8C%E9%A8%93%E3%80%91%0D%0A%E3%80%90%E5%B8%8C%E6%9C%9B%E6%97%A5%E3%80%91%0D%0A%E3%80%90%E3%81%94%E8%B3%AA%E5%95%8F%E3%80%91">メール</a>
     </div>
 
-    <!-- ✅ SNS（スマホで同幅整列） -->
     <div class="btns" style="margin-top:16px;">
       <a class="btn" href="https://www.instagram.com/ballerzoo.u15" target="_blank" rel="noopener">チームInstagram</a>
       <a class="btn" href="https://www.instagram.com/coach.a.u1" target="_blank" rel="noopener">代表Instagram</a>
@@ -433,9 +431,9 @@ BALLERZOOスクールは、
   </div>
 </section>
 
-<section id="bottom-message">
+<section id="bottom-message" style="border-bottom:none;">
   <div class="wrap" style="padding-top:0;">
-    <img class="bottom-image" src="バスケットで日本を元気に.jpg" alt="バスケットで日本を元気に！">
+    <img class="bottom-image" src="バスケットで日本を元気に.jpg" alt="バスケットで日本を元気に！" loading="lazy">
   </div>
 </section>
 
@@ -443,51 +441,36 @@ BALLERZOOスクールは、
   © BALLERZOO School
 </footer>
 
-<!-- ✅ ギャラリー：自動スクロール＋手動操作を両立（手動中は自動停止） -->
+<!-- ✅ ギャラリー：完全エンドレス（50px/sec） -->
 <script>
 (function(){
   const track = document.getElementById('galleryTrack');
   if(!track) return;
 
-  // ループ用に複製（1回）
+  // ループ用に中身を複製（1回）
   track.innerHTML += track.innerHTML;
 
+  // ✅ 速度：50px/sec（ご指定）
+  const speedPxPerSec = 50;
+
   let x = 0;
-  let paused = false;
-
-  // 速度（必要ならここを上げる：0.50〜0.65など）
-  const speed = 0.50;
-
   let halfWidth = 0;
-  const measure = () => { halfWidth = track.scrollWidth / 2; };
+  let last = performance.now();
 
+  const measure = () => {
+    halfWidth = track.scrollWidth / 2;
+  };
   window.addEventListener('load', measure);
   window.addEventListener('resize', measure);
+  measure();
 
-  const marquee = track.parentElement;
+  function tick(now){
+    const dt = (now - last) / 1000;
+    last = now;
 
-  // PC：ホバーで停止
-  marquee.addEventListener('mouseenter', () => paused = true);
-  marquee.addEventListener('mouseleave', () => paused = false);
-
-  // 手動スクロール中は停止（操作感改善）
-  let manualTimer = null;
-  const pauseByManual = () => {
-    paused = true;
-    clearTimeout(manualTimer);
-    manualTimer = setTimeout(() => { paused = false; }, 800);
-  };
-  marquee.addEventListener('scroll', pauseByManual, { passive:true });
-
-  // スマホ：タッチ中停止
-  marquee.addEventListener('touchstart', () => paused = true, { passive:true });
-  marquee.addEventListener('touchend', () => paused = false, { passive:true });
-  marquee.addEventListener('touchcancel', () => paused = false, { passive:true });
-
-  function tick(){
-    if(!paused){
-      x += speed;
-      if(halfWidth > 0 && x >= halfWidth) x = 0;
+    if(halfWidth > 0){
+      x += speedPxPerSec * dt;
+      if(x >= halfWidth) x -= halfWidth;
       track.style.transform = `translateX(${-x}px)`;
     }
     requestAnimationFrame(tick);
@@ -498,3 +481,4 @@ BALLERZOOスクールは、
 
 </body>
 </html>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
