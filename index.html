@@ -65,9 +65,10 @@
       position:relative;
       padding:80px 20px;
       text-align:center;
+
       background-image:url("はづき.jfif");
       background-size:cover;
-      background-position:center 10%; /* スマホはこのまま（完ぺき維持） */
+      background-position:center 10%; /* スマホはこのまま */
     }
     .hero::before{
       content:"";
@@ -86,7 +87,7 @@
       margin:0 auto;
     }
 
-    /* PC表示のみ：上すぎた対策（少し下げる） */
+    /* PC表示のみ：背景位置を少し下げる（上すぎ対策） */
     @media (min-width: 900px){
       .hero{ background-position:center 30%; }
     }
@@ -120,7 +121,7 @@
     }
     .btn:hover{ filter:brightness(0.98); }
 
-    /* ✅ スマホでボタンを綺麗に整列（問い合わせもSNSも同じ幅で縦並び） */
+    /* ✅ スマホで問い合わせ＆SNSボタンを綺麗に整列（同幅） */
     @media (max-width: 600px){
       .btns{
         flex-direction:column;
@@ -141,6 +142,7 @@
       font-size:26px;
       margin:0 0 20px;
     }
+
     .grid3{
       display:grid;
       grid-template-columns:repeat(3,1fr);
@@ -173,14 +175,22 @@
       margin-top:16px;
     }
 
-    /* Gallery（自動横スクロール） */
+    /* Gallery（手動スクロール + 自動スクロール） */
     .gallery-marquee{
       border:1px solid var(--line);
       border-radius:12px;
-      overflow:hidden;
       background:#fff;
+      overflow-x:auto;   /* ✅ 手動スクロール可 */
+      overflow-y:hidden;
+      -webkit-overflow-scrolling:touch; /* iPhone慣性 */
       margin-top:18px;
     }
+    .gallery-marquee::-webkit-scrollbar{ height:8px; }
+    .gallery-marquee::-webkit-scrollbar-thumb{
+      background:#d0d0d0;
+      border-radius:999px;
+    }
+
     .gallery-track{
       display:flex;
       gap:12px;
@@ -365,26 +375,14 @@
     <h2>Gallery</h2>
     <p class="note">練習の雰囲気が伝わるように、写真を一部掲載しています。</p>
 
-    <div class="gallery-marquee" aria-label="写真ギャラリー（自動スクロール）">
+    <div class="gallery-marquee" aria-label="写真ギャラリー（自動スクロール＋手動操作可）">
       <div class="gallery-track" id="galleryTrack">
-        <a href="imagesgallery-01.jpg" target="_blank" rel="noopener">
-          <img src="imagesgallery-01.jpg" alt="練習写真 1" loading="lazy">
-        </a>
-        <a href="imagesgallery-02.jpg" target="_blank" rel="noopener">
-          <img src="imagesgallery-02.jpg" alt="練習写真 2" loading="lazy">
-        </a>
-        <a href="imagesgallery-03.jpg" target="_blank" rel="noopener">
-          <img src="imagesgallery-03.jpg" alt="練習写真 3" loading="lazy">
-        </a>
-        <a href="imagesgallery-04.jpg" target="_blank" rel="noopener">
-          <img src="imagesgallery-04.jpg" alt="練習写真 4" loading="lazy">
-        </a>
-        <a href="imagesgallery-05.jpg" target="_blank" rel="noopener">
-          <img src="imagesgallery-05.jpg" alt="練習写真 5" loading="lazy">
-        </a>
-        <a href="imagesgallery-06.jpg" target="_blank" rel="noopener">
-          <img src="imagesgallery-06.jpg" alt="練習写真 6" loading="lazy">
-        </a>
+        <a href="imagesgallery-01.jpg" target="_blank" rel="noopener"><img src="imagesgallery-01.jpg" alt="ギャラリー1" loading="lazy"></a>
+        <a href="imagesgallery-02.jpg" target="_blank" rel="noopener"><img src="imagesgallery-02.jpg" alt="ギャラリー2" loading="lazy"></a>
+        <a href="imagesgallery-03.jpg" target="_blank" rel="noopener"><img src="imagesgallery-03.jpg" alt="ギャラリー3" loading="lazy"></a>
+        <a href="imagesgallery-04.jpg" target="_blank" rel="noopener"><img src="imagesgallery-04.jpg" alt="ギャラリー4" loading="lazy"></a>
+        <a href="imagesgallery-05.jpg" target="_blank" rel="noopener"><img src="imagesgallery-05.jpg" alt="ギャラリー5" loading="lazy"></a>
+        <a href="imagesgallery-06.jpg" target="_blank" rel="noopener"><img src="imagesgallery-06.jpg" alt="ギャラリー6" loading="lazy"></a>
       </div>
     </div>
 
@@ -418,33 +416,19 @@ BALLERZOOスクールは、
     <h2>体験・お問い合わせ</h2>
     <p class="note">体験希望の方は、①学年 ②バスケ経験 ③希望日 を添えてご連絡ください。</p>
 
-    <!-- ✅ ここがスマホで「同幅・同整列」になります -->
+    <!-- ✅ お問い合わせ（スマホで同幅整列） -->
     <div class="btns">
-      <a class="btn primary" href="https://forms.gle/88f2Bqe2GeTyRSsu9" target="_blank" rel="noopener">
-        フォーム（24時間受付）
-      </a>
-      <a class="btn" href="https://line.me/ti/p/bASKCL0GHk" target="_blank" rel="noopener">
-        LINE
-      </a>
-      <a class="btn" href="mailto:0405amiya@gmail.com?subject=%E3%80%90%E4%BD%93%E9%A8%93%E5%B8%8C%E6%9C%9B%E3%80%91BALLERZOO%E3%82%B9%E3%82%AF%E3%83%BC%E3%83%AB&body=%E3%80%90%E5%AD%A6%E5%B9%B4%E3%80%91%0D%0A%E3%80%90%E3%83%90%E3%82%B9%E3%82%B1%E7%B5%8C%E9%A8%93%E3%80%91%0D%0A%E3%80%90%E5%B8%8C%E6%9C%9B%E6%97%A5%E3%80%91%0D%0A%E3%80%90%E3%81%94%E8%B3%AA%E5%95%8F%E3%80%91">
-        メール
-      </a>
+      <a class="btn primary" href="https://forms.gle/88f2Bqe2GeTyRSsu9" target="_blank" rel="noopener">フォーム（24時間受付）</a>
+      <a class="btn" href="https://line.me/ti/p/bASKCL0GHk" target="_blank" rel="noopener">LINE</a>
+      <a class="btn" href="mailto:0405amiya@gmail.com?subject=%E3%80%90%E4%BD%93%E9%A8%93%E5%B8%8C%E6%9C%9B%E3%80%91BALLERZOO%E3%82%B9%E3%82%AF%E3%83%BC%E3%83%AB&body=%E3%80%90%E5%AD%A6%E5%B9%B4%E3%80%91%0D%0A%E3%80%90%E3%83%90%E3%82%B9%E3%82%B1%E7%B5%8C%E9%A8%93%E3%80%91%0D%0A%E3%80%90%E5%B8%8C%E6%9C%9B%E6%97%A5%E3%80%91%0D%0A%E3%80%90%E3%81%94%E8%B3%AA%E5%95%8F%E3%80%91">メール</a>
     </div>
 
-    <!-- ✅ SNSも同じ.btn + 同じ.btns でスマホ整列 -->
+    <!-- ✅ SNS（スマホで同幅整列） -->
     <div class="btns" style="margin-top:16px;">
-      <a class="btn" href="https://www.instagram.com/ballerzoo.u15" target="_blank" rel="noopener">
-        チームInstagram
-      </a>
-      <a class="btn" href="https://www.instagram.com/coach.a.u1" target="_blank" rel="noopener">
-        代表Instagram
-      </a>
-      <a class="btn" href="https://ameblo.jp/tsunagu-coach-a/" target="_blank" rel="noopener">
-        代表ブログ
-      </a>
-      <a class="btn" href="coach.html">
-        Coach
-      </a>
+      <a class="btn" href="https://www.instagram.com/ballerzoo.u15" target="_blank" rel="noopener">チームInstagram</a>
+      <a class="btn" href="https://www.instagram.com/coach.a.u1" target="_blank" rel="noopener">代表Instagram</a>
+      <a class="btn" href="https://ameblo.jp/tsunagu-coach-a/" target="_blank" rel="noopener">代表ブログ</a>
+      <a class="btn" href="coach.html">Coach</a>
     </div>
   </div>
 </section>
@@ -459,29 +443,46 @@ BALLERZOOスクールは、
   © BALLERZOO School
 </footer>
 
+<!-- ✅ ギャラリー：自動スクロール＋手動操作を両立（手動中は自動停止） -->
 <script>
 (function(){
   const track = document.getElementById('galleryTrack');
   if(!track) return;
 
-  /* ループ用に複製（1回） */
+  // ループ用に複製（1回）
   track.innerHTML += track.innerHTML;
 
   let x = 0;
   let paused = false;
+
+  // 速度（必要ならここを上げる：0.50〜0.65など）
   const speed = 0.50;
 
   let halfWidth = 0;
   const measure = () => { halfWidth = track.scrollWidth / 2; };
+
   window.addEventListener('load', measure);
   window.addEventListener('resize', measure);
 
   const marquee = track.parentElement;
+
+  // PC：ホバーで停止
   marquee.addEventListener('mouseenter', () => paused = true);
   marquee.addEventListener('mouseleave', () => paused = false);
-  marquee.addEventListener('touchstart', () => paused = true, {passive:true});
-  marquee.addEventListener('touchend', () => paused = false);
-  marquee.addEventListener('touchcancel', () => paused = false);
+
+  // 手動スクロール中は停止（操作感改善）
+  let manualTimer = null;
+  const pauseByManual = () => {
+    paused = true;
+    clearTimeout(manualTimer);
+    manualTimer = setTimeout(() => { paused = false; }, 800);
+  };
+  marquee.addEventListener('scroll', pauseByManual, { passive:true });
+
+  // スマホ：タッチ中停止
+  marquee.addEventListener('touchstart', () => paused = true, { passive:true });
+  marquee.addEventListener('touchend', () => paused = false, { passive:true });
+  marquee.addEventListener('touchcancel', () => paused = false, { passive:true });
 
   function tick(){
     if(!paused){
