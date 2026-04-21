@@ -1,12 +1,14 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <metaスクール｜バスケットボールスクール（石川県加賀市）</title>  <meta charset="utf-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BALLERZOOスクール｜バスケットボールスクール（石川県加賀市）</title>
 
   <meta name="description" content="BALLERZOOスクールは、石川県加賀市を拠点に活動する小学生・中学生向けのバスケットボールスクールです。体験初回無料。平日19:00〜21:00・日曜18:00〜20:00。">
   <meta name="theme-color" content="#ffffff">
 
-  <!-- ✅ favicon（ルート直下に favicon.ico がある前提） -->
+  <!-- favicon（ルート直下に favicon.ico がある前提） -->
   <link rel="icon" href="favicon.ico" sizes="any">
 
   <style>
@@ -83,8 +85,7 @@
       max-width:760px;
       margin:0 auto;
     }
-
-    /* PC表示のみ：上すぎた対策（少し下げる） */
+    /* PC表示のみ：上すぎた対策 */
     @media (min-width: 900px){
       .hero{ background-position:center 30%; }
     }
@@ -118,7 +119,7 @@
     }
     .btn:hover{ filter:brightness(0.98); }
 
-    /* ✅ スマホで問い合わせ＆SNSボタンを綺麗に整列（同幅） */
+    /* ✅ スマホでボタンを同幅・綺麗に整列（問い合わせ＆SNS共通） */
     @media (max-width: 600px){
       .btns{
         flex-direction:column;
@@ -171,19 +172,28 @@
       margin-top:16px;
     }
 
-    /* Gallery（完全エンドレス：overflowは隠す） */
+    /* Gallery（手動スクロールOK + 自動エンドレス） */
     .gallery-marquee{
       border:1px solid var(--line);
       border-radius:12px;
-      overflow:hidden;   /* ✅ エンドレス優先のため hidden */
       background:#fff;
       margin-top:18px;
+
+      overflow-x:auto;                  /* ✅ 手動スクロール可 */
+      overflow-y:hidden;
+      -webkit-overflow-scrolling:touch; /* ✅ iPhone慣性 */
     }
+    .gallery-marquee::-webkit-scrollbar{ height:8px; }
+    .gallery-marquee::-webkit-scrollbar-thumb{
+      background:#d0d0d0;
+      border-radius:999px;
+    }
+
     .gallery-track{
       display:flex;
       gap:12px;
       padding:12px;
-      will-change: transform;
+      width:max-content; /* 横に伸びる */
     }
     .gallery-track a{
       flex:0 0 auto;
@@ -331,7 +341,6 @@
       <li>金：19:00〜21:00（片山津中学校 体育館）</li>
       <li><b>日：18:00〜20:00（片山津中学校 体育館）</b></li>
     </ul>
-
     <div class="highlight">
       <b>重要：</b>会場都合等により、練習が急に休みになる場合があります。<br>
       体験・見学は必ず事前にご連絡ください。
@@ -347,7 +356,6 @@
       <div class="card"><h3>小学生</h3><p>1回500円<br><b>月上限 2,000円</b></p></div>
       <div class="card"><h3>中学生</h3><p>1回500円<br><b>月上限 4,000円</b></p></div>
     </div>
-
     <div class="highlight">
       <b>お支払い方法</b>
       <ul class="list">
@@ -363,7 +371,7 @@
     <h2>Gallery</h2>
     <p class="note">練習の雰囲気が伝わるように、写真を一部掲載しています。</p>
 
-    <div class="gallery-marquee" aria-label="写真ギャラリー（エンドレス）">
+    <div class="gallery-marquee" aria-label="写真ギャラリー（手動＋自動エンドレス）">
       <div class="gallery-track" id="galleryTrack">
         <a href="imagesgallery-01.jpg" target="_blank" rel="noopener">
           <img src="imagesgallery-01.jpg" alt="練習風景 1" loading="lazy">
@@ -392,7 +400,7 @@
   </div>
 </section>
 
-<!-- ✅ ギャラリーの下／お問い合わせ直前：改行の無駄なし -->
+<!-- ✅ 指定位置：ギャラリーの下／お問い合わせ直前（無駄な改行なし） -->
 <section id="about-ballerzoo">
   <div class="wrap">
     <h2>BALLERZOOとは</h2>
@@ -431,7 +439,7 @@ BALLERZOOスクールは、
   </div>
 </section>
 
-<section id="bottom-message" style="border-bottom:none;">
+<section id="bottom-message">
   <div class="wrap" style="padding-top:0;">
     <img class="bottom-image" src="バスケットで日本を元気に.jpg" alt="バスケットで日本を元気に！" loading="lazy">
   </div>
@@ -441,21 +449,22 @@ BALLERZOOスクールは、
   © BALLERZOO School
 </footer>
 
-<!-- ✅ ギャラリー：完全エンドレス（50px/sec） -->
+<!-- ✅ ギャラリー：手動スクロールOK + 自動エンドレス（50px/sec） -->
 <script>
 (function(){
   const track = document.getElementById('galleryTrack');
   if(!track) return;
 
-  // ループ用に中身を複製（1回）
+  const marquee = track.parentElement; // .gallery-marquee
+
+  // ループ用に複製（1回）
   track.innerHTML += track.innerHTML;
 
-  // ✅ 速度：50px/sec（ご指定）
+  // 速度：50px/sec（ご希望）
   const speedPxPerSec = 50;
 
-  let x = 0;
-  let halfWidth = 0;
   let last = performance.now();
+  let halfWidth = 0;
 
   const measure = () => {
     halfWidth = track.scrollWidth / 2;
@@ -464,21 +473,37 @@ BALLERZOOスクールは、
   window.addEventListener('resize', measure);
   measure();
 
+  // 手動操作中は停止 → 少し後に自動再開（操作感が自然）
+  let paused = false;
+  let manualTimer = null;
+
+  const pauseByManual = () => {
+    paused = true;
+    clearTimeout(manualTimer);
+    manualTimer = setTimeout(() => { paused = false; }, 900);
+  };
+
+  marquee.addEventListener('scroll', pauseByManual, { passive:true });
+  marquee.addEventListener('touchstart', () => { paused = true; }, { passive:true });
+  marquee.addEventListener('touchend', pauseByManual, { passive:true });
+  marquee.addEventListener('touchcancel', pauseByManual, { passive:true });
+
   function tick(now){
     const dt = (now - last) / 1000;
     last = now;
 
-    if(halfWidth > 0){
-      x += speedPxPerSec * dt;
-      if(x >= halfWidth) x -= halfWidth;
-      track.style.transform = `translateX(${-x}px)`;
+    if(!paused && halfWidth > 0){
+      marquee.scrollLeft += speedPxPerSec * dt;
+      if(marquee.scrollLeft >= halfWidth){
+        marquee.scrollLeft -= halfWidth;
+      }
     }
     requestAnimationFrame(tick);
   }
+
   requestAnimationFrame(tick);
 })();
 </script>
 
 </body>
 </html>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
