@@ -7,6 +7,13 @@
   <meta name="description" content="BALLERZOOスクール。小学5年生〜中学3年生対象。体験初回無料。平日19:00〜21:00・日曜18:00〜20:00。">
   <meta name="theme-color" content="#ffffff">
 
+  <!-- ✅ ブックマーク/タブ/ホーム画面用アイコン（ロゴ画像） -->
+  <!-- ※理想はpng/icoですが、まずはこのjpgでも表示される環境が多いです -->
+  ロゴ白正方形.jpg
+  ロゴ白正方形.jpg
+  <meta property="og:image" content="ロゴ白正方形.jpg">
+  <meta name="twitter:image" content="ロゴ白正方形.jpg">
+
   <style>
     :root{
       --bg:#ffffff;
@@ -154,6 +161,47 @@
       margin-top:16px;
     }
 
+    /* ✅ Auto-scroll Gallery（6枚想定） */
+    #gallery{ background:#fff; }
+    .gallery-marquee{
+      margin-top:18px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:#fff;
+      overflow:hidden;
+    }
+    .gallery-track{
+      display:flex;
+      gap:12px;
+      padding:12px;
+      will-change: transform;
+    }
+    .gallery-track a{
+      flex:0 0 auto;
+      display:block;
+      border-radius:12px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      background:#fff;
+    }
+    .gallery-track img{
+      width:260px;
+      height:170px;
+      object-fit:cover;
+      display:block;
+      transition: transform .2s ease, filter .2s ease;
+    }
+    .gallery-track a:hover img{
+      transform: scale(1.02);
+      filter: brightness(0.98);
+    }
+    @media (max-width: 900px){
+      .gallery-track img{
+        width:220px;
+        height:150px;
+      }
+    }
+
     /* Bottom image section */
     #bottom-message{
       border-bottom:none;
@@ -188,15 +236,12 @@
   <div class="nav">
     <div class="brand">BALLERZOOスクール</div>
     <div class="navlinks">
-      <a href="#about">概要</a>
-      <a href="#type">参加形態</a>
-      <a href="#schedule">日程</a>
-      <a href="#price">料金</a>
-
-      <!-- ✅ 追加：コーチ紹介（独立ページ） -->
-      <a href="coach.html">Coach</a>
-
-      <a href="#contact">お問い合わせ</a>
+      #about概要</a>
+      #type参加形態</a>
+      #schedule日程</a>
+      #price料金</a>
+      coach.htmlCoach</a>
+      #contactお問い合わせ</a>
     </div>
   </div>
 </header>
@@ -206,10 +251,9 @@
     <h1>一生懸命を、未来に繋ぐ。</h1>
     <p>バスケットボールを通して、考え、挑戦し続ける力を育てます。</p>
     <div class="btns">
-      <a class="btn primary" href="#contact">体験・お問い合わせ</a>
-      <a class="btn" href="#schedule">活動日程を見る</a>
-      <!-- ここもJAMANEYっぽくすると強い：トップからCoachへ -->
-      <a class="btn" href="coach.html">Coach</a>
+      #contact体験・お問い合わせ</a>
+      #schedule活動日程を見る</a>
+      coach.htmlCoach</a>
     </div>
   </div>
 </section>
@@ -323,36 +367,112 @@
   </div>
 </section>
 
+<!-- ✅ 自動横スクロール ギャラリー（6枚） -->
+<section id="gallery">
+  <div class="wrap">
+    <h2>Gallery</h2>
+    <p class="note">練習の雰囲気が伝わるように、写真を一部掲載しています。</p>
+
+    <div class="gallery-marquee" aria-label="写真ギャラリー（自動スクロール）">
+      <div class="gallery-track" id="galleryTrack">
+        images/gallery-01.jpg
+          images/gallery-01.jpg
+        </a>
+        images/gallery-02.jpg
+          images/gallery-02.jpg
+        </a>
+        images/gallery-03.jpg
+          images/gallery-03.jpg
+        </a>
+        images/gallery-04.jpg
+          images/gallery-04.jpg
+        </a>
+        images/gallery-05.jpg
+          images/gallery-05.jpg
+        </a>
+        images/gallery-06.jpg
+          images/gallery-06.jpg
+        </a>
+      </div>
+    </div>
+
+    <div class="highlight">
+      <b>お願い：</b>写真の無断転載は禁止しています。掲載内容は変更・更新する場合があります。
+    </div>
+  </div>
+</section>
+
 <section id="contact">
   <div class="wrap">
     <h2>体験・お問い合わせ</h2>
     <p>体験希望の方は、①学年 ②バスケ経験 ③希望日 を添えてご連絡ください。</p>
 
     <div class="btns">
-      <a class="btn primary" href="https://forms.gle/88f2Bqe2GeTyRSsu9" target="_blank" rel="noopener">体験・お問い合わせフォーム（24時間受付）</a>
-      <a class="btn" href="https://line.me/ti/p/bASKCL0GHk" target="_blank" rel="noopener">LINEで問い合わせ</a>
-      <a class="btn" href="mailto:0405amiya@gmail.com?subject=%E3%80%90%E4%BD%93%E9%A8%93%E5%B8%8C%E6%9C%9B%E3%80%91BALLERZOO%E3%82%B9%E3%82%AF%E3%83%BC%E3%83%AB&body=%E3%80%90%E5%AD%A6%E5%B9%B4%E3%80%91%0D%0A%E3%80%90%E3%83%90%E3%82%B9%E3%82%B1%E7%B5%8C%E9%A8%93%E3%80%91%0D%0A%E3%80%90%E5%B8%8C%E6%9C%9B%E6%97%A5%E3%80%91%0D%0A%E3%80%90%E3%81%94%E8%B3%AA%E5%95%8F%E3%80%91">メールで問い合わせ</a>
+      https://forms.gle/88f2Bqe2GeTyRSsu9体験・お問い合わせフォーム（24時間受付）</a>
+      https://line.me/ti/p/bASKCL0GHkLINE</a>
+      0405amiya@gmail.com?subject=%E3%80%90%E4%BD%93%E9%A8%93%E5%B8%8C%E6%9C%9B%E3%80%91BALLERZOO%E3%82%B9%E3%82%AF%E3%83%BC%E3%83%AB&body=%E3%80%90%E5%AD%A6%E5%B9%B4%E3%80%91%0D%0A%E3%80%90%E3%83%90%E3%82%B9%E3%82%B1%E7%B5%8C%E9%A8%93%E3%80%91%0D%0A%E3%80%90%E5%B8%8C%E6%9C%9B%E6%97%A5%E3%80%91%0D%0A%E3%80%90%E3%81%94%E8%B3%AA%E5%95%8F%E3%80%91メール</a>
     </div>
 
     <div class="btns" style="margin-top:16px;">
-      <a class="btn" href="https://www.instagram.com/ballerzoo.u15" target="_blank" rel="noopener">チームInstagram</a>
-      <a class="btn" href="https://www.instagram.com/coach.a.u1" target="_blank" rel="noopener">代表Instagram</a>
-      <a class="btn" href="https://ameblo.jp/tsunagu-coach-a/" target="_blank" rel="noopener">代表ブログ</a>
-      <a class="btn" href="coach.html">Coachページを見る</a>
+      https://www.instagram.com/ballerzoo.u15チームInstagram</a>
+      https://www.instagram.com/coach.a.u1代表Instagram</a>
+      https://ameblo.jp/tsunagu-coach-a/代表ブログ</a>
+      coach.htmlCoach</a>
     </div>
   </div>
 </section>
 
-<!-- ✅ 追加：ページ最下部の画像 -->
+<!-- ✅ ページ最下部の画像 -->
 <section id="bottom-message">
   <div class="wrap" style="padding-top:0;">
-    <img class="bottom-image" src="バスケットで日本を元気に.jpg" alt="バスケットで日本を元気に！">
+    バスケットで日本を元気に.jpg
   </div>
 </section>
 
 <footer>
   © BALLERZOO School
 </footer>
+
+<!-- ✅ ギャラリー自動スクロール（6枚想定） -->
+<script>
+(function(){
+  const track = document.getElementById('galleryTrack');
+  if(!track) return;
+
+  // ループのために中身を複製
+  track.innerHTML += track.innerHTML;
+
+  let x = 0;
+  let paused = false;
+
+  // 6枚想定のおすすめ速度
+  const speed = 0.35;
+
+  let halfWidth = 0;
+  const measure = () => {
+    halfWidth = track.scrollWidth / 2;
+  };
+  window.addEventListener('load', measure);
+  window.addEventListener('resize', measure);
+
+  const marquee = track.parentElement;
+  marquee.addEventListener('mouseenter', () => paused = true);
+  marquee.addEventListener('mouseleave', () => paused = false);
+  marquee.addEventListener('touchstart', () => paused = true, {passive:true});
+  marquee.addEventListener('touchend', () => paused = false);
+  marquee.addEventListener('touchcancel', () => paused = false);
+
+  function tick(){
+    if(!paused){
+      x += speed;
+      if(x >= halfWidth) x = 0;
+      track.style.transform = `translateX(${-x}px)`;
+    }
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+})();
+</script>
 
 </body>
 </html>
