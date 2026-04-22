@@ -8,7 +8,7 @@
   <meta name="description" content="BALLERZOOスクールは、石川県加賀市を拠点に活動する小学生・中学生向けのバスケットボールスクールです。体験初回無料。平日19:00〜21:00・日曜18:00〜20:00。" />
   <meta name="theme-color" content="#ffffff" />
 
-  <!-- ✅ favicon（ルート直下に favicon.ico がある前提） -->
+  <!-- ✅ favicon（ルート直下に favicon.ico） -->
   <link rel="icon" href="favicon.ico" sizes="any" />
 
   <style>
@@ -85,7 +85,7 @@
       max-width:760px;
       margin:0 auto;
     }
-    /* PC表示のみ：上すぎ対策 */
+    /* PC表示のみ：上すぎた対策 */
     @media (min-width: 900px){
       .hero{ background-position:center 30%; }
     }
@@ -119,7 +119,7 @@
     }
     .btn:hover{ filter:brightness(0.98); }
 
-    /* ✅ スマホで問い合わせ＆SNSボタンを同幅で縦整列 */
+    /* ✅ スマホ：問い合わせ・SNSボタンを同幅で縦整列 */
     @media (max-width: 600px){
       .btns{
         flex-direction:column;
@@ -172,27 +172,24 @@
       margin-top:16px;
     }
 
-    /* Gallery（手動 + 自動エンドレス） */
+    /* Gallery（transformでスムーズに流す＋ドラッグ操作） */
     .gallery-marquee{
       border:1px solid var(--line);
       border-radius:12px;
       background:#fff;
       margin-top:18px;
+      overflow:hidden;       /* transformで動かすため */
+      touch-action: pan-y;   /* 縦スクロールはOK */
+      cursor: grab;
+      user-select:none;
+    }
+    .gallery-marquee:active{ cursor: grabbing; }
 
-      overflow-x:auto;                 /* ✅ 手動スクロールOK */
-      overflow-y:hidden;
-      -webkit-overflow-scrolling:touch;/* ✅ iPhone慣性 */
-    }
-    .gallery-marquee::-webkit-scrollbar{ height:8px; }
-    .gallery-marquee::-webkit-scrollbar-thumb{
-      background:#d0d0d0;
-      border-radius:999px;
-    }
     .gallery-track{
       display:flex;
       gap:12px;
       padding:12px;
-      width:max-content;
+      will-change: transform;
     }
     .gallery-track a{
       flex:0 0 auto;
@@ -207,14 +204,13 @@
       height:170px;
       object-fit:cover;
       display:block;
-      transition: transform .2s ease, filter .2s ease;
-    }
-    .gallery-track a:hover img{
-      transform: scale(1.02);
-      filter: brightness(0.98);
+      pointer-events:none; /* ドラッグ時に画像が邪魔しない */
     }
     @media (max-width: 900px){
-      .gallery-track img{ width:220px; height:150px; }
+      .gallery-track img{
+        width:220px;
+        height:150px;
+      }
     }
 
     /* Bottom image */
@@ -306,6 +302,7 @@
           <li>飛び入り参加OK</li>
         </ul>
       </div>
+
       <div class="card">
         <h3>クラブ生</h3>
         <ul class="list">
@@ -315,6 +312,7 @@
         </ul>
         <p class="note" style="margin-top:10px;">※クラブ生のみの練習を行う場合があります</p>
       </div>
+
       <div class="card">
         <h3>クラブ生費用</h3>
         <ul class="list">
@@ -335,6 +333,7 @@
       <li>金：19:00〜21:00（片山津中学校 体育館）</li>
       <li><b>日：18:00〜20:00（片山津中学校 体育館）</b></li>
     </ul>
+
     <div class="highlight">
       <b>重要：</b>会場都合等により、練習が急に休みになる場合があります。<br>
       体験・見学は必ず事前にご連絡ください。
@@ -350,6 +349,7 @@
       <div class="card"><h3>小学生</h3><p>1回500円<br><b>月上限 2,000円</b></p></div>
       <div class="card"><h3>中学生</h3><p>1回500円<br><b>月上限 4,000円</b></p></div>
     </div>
+
     <div class="highlight">
       <b>お支払い方法</b>
       <ul class="list">
@@ -363,28 +363,16 @@
 <section id="gallery">
   <div class="wrap">
     <h2>Gallery</h2>
-    <p class="note">チームの雰囲気が伝わるように、写真を一部掲載しています。</p>
+    <p class="note">練習の雰囲気が伝わるように、写真を一部掲載しています。（スワイプで操作できます）</p>
 
-    <div class="gallery-marquee" aria-label="写真ギャラリー（手動＋自動エンドレス）">
+    <div class="gallery-marquee" id="galleryMarquee" aria-label="写真ギャラリー（エンドレス・ドラッグ操作）">
       <div class="gallery-track" id="galleryTrack">
-        <a href="imagesgallery-01.jpg" target="_blank" rel="noopener">
-          <img src="imagesgallery-01.jpg" alt="ギャラリー1" loading="lazy">
-        </a>
-        <a href="imagesgallery-02.jpg" target="_blank" rel="noopener">
-          <img src="imagesgallery-02.jpg" alt="ギャラリー2" loading="lazy">
-        </a>
-        <a href="imagesgallery-03.jpg" target="_blank" rel="noopener">
-          <img src="imagesgallery-03.jpg" alt="ギャラリー3" loading="lazy">
-        </a>
-        <a href="imagesgallery-04.jpg" target="_blank" rel="noopener">
-          <img src="imagesgallery-04.jpg" alt="ギャラリー4" loading="lazy">
-        </a>
-        <a href="imagesgallery-05.jpg" target="_blank" rel="noopener">
-          <img src="imagesgallery-05.jpg" alt="ギャラリー5" loading="lazy">
-        </a>
-        <a href="imagesgallery-06.jpg" target="_blank" rel="noopener">
-          <img src="imagesgallery-06.jpg" alt="ギャラリー6" loading="lazy">
-        </a>
+        <a href="imagesgallery-01.jpg" target="_blank" rel="noopener"><img src="imagesgallery-01.jpg" alt="ギャラリー1" loading="lazy"></a>
+        <a href="imagesgallery-02.jpg" target="_blank" rel="noopener"><img src="imagesgallery-02.jpg" alt="ギャラリー2" loading="lazy"></a>
+        <a href="imagesgallery-03.jpg" target="_blank" rel="noopener"><img src="imagesgallery-03.jpg" alt="ギャラリー3" loading="lazy"></a>
+        <a href="imagesgallery-04.jpg" target="_blank" rel="noopener"><img src="imagesgallery-04.jpg" alt="ギャラリー4" loading="lazy"></a>
+        <a href="imagesgallery-05.jpg" target="_blank" rel="noopener"><img src="imagesgallery-05.jpg" alt="ギャラリー5" loading="lazy"></a>
+        <a href="imagesgallery-06.jpg" target="_blank" rel="noopener"><img src="imagesgallery-06.jpg" alt="ギャラリー6" loading="lazy"></a>
       </div>
     </div>
 
@@ -394,7 +382,7 @@
   </div>
 </section>
 
-<!-- ✅ ギャラリーの下 / #contact直前 -->
+<!-- ✅ ギャラリーの下 / #contact直前（先頭の無駄改行なし） -->
 <section id="about-ballerzoo">
   <div class="wrap">
     <h2>BALLERZOOとは</h2>
@@ -435,7 +423,7 @@ BALLERZOOスクールは、
 
 <section id="bottom-message" style="border-bottom:none;">
   <div class="wrap" style="padding-top:0;">
-    <img class="bottom-image" src="バスケットで日本を元気に.jpg" alt="バスケットで日本を元気に！" loading="lazy">
+    <img class="bottom-image" src="バスケットで日本を元気に.jpg" alt="バスケットで日本を元気に！">
   </div>
 </section>
 
@@ -443,60 +431,110 @@ BALLERZOOスクールは、
   © BALLERZOO School
 </footer>
 
-<!-- ✅ ギャラリー：手動OK + 自動エンドレス（速度 80px/sec） -->
+<!-- ✅ ギャラリー：スムーズ自動（50px/sec）＋ドラッグ（スマホスワイプ） -->
 <script>
 (function(){
   const track = document.getElementById('galleryTrack');
-  if(!track) return;
-
-  const marquee = track.parentElement; // .gallery-marquee
+  const marquee = document.getElementById('galleryMarquee');
+  if(!track || !marquee) return;
 
   // ループ用に中身を複製（1回）
   track.innerHTML += track.innerHTML;
 
-  // ✅ 自動スクロール速度（px/sec）※速めに調整済み
-  const speedPxPerSec = 400;
+  // ✅ 速度：50px/sec
+  const speedPxPerSec = 50;
 
-  let last = performance.now();
   let halfWidth = 0;
-
-  const measure = () => {
-    halfWidth = track.scrollWidth / 2;
-  };
+  const measure = () => { halfWidth = track.scrollWidth / 2; };
   window.addEventListener('load', measure);
   window.addEventListener('resize', measure);
   measure();
 
-  // 手動操作中は停止 → 少し後に自動再開
-  let paused = false;
-  let manualTimer = null;
+  // 位置（小数OK）
+  let x = 0;
 
-  const pauseByManual = () => {
-    paused = true;
-    clearTimeout(manualTimer);
-    manualTimer = setTimeout(() => { paused = false; }, 900);
+  // 自動制御
+  let paused = false;
+  let last = performance.now();
+
+  // ドラッグ制御
+  let dragging = false;
+  let startX = 0;
+  let startOffset = 0;
+  let moved = false;
+
+  const clampLoop = () => {
+    if(halfWidth <= 0) return;
+    x = ((x % halfWidth) + halfWidth) % halfWidth;
   };
 
-  marquee.addEventListener('scroll', pauseByManual, { passive:true });
-  marquee.addEventListener('touchstart', () => { paused = true; }, { passive:true });
-  marquee.addEventListener('touchend', pauseByManual, { passive:true });
-  marquee.addEventListener('touchcancel', pauseByManual, { passive:true });
+  const apply = () => {
+    track.style.transform = `translate3d(${-x}px,0,0)`;
+  };
+
+  // クリック誤発火防止（ドラッグしたらクリックしない）
+  track.addEventListener('click', (e) => {
+    if(moved){
+      e.preventDefault();
+      e.stopPropagation();
+      moved = false;
+    }
+  }, true);
+
+  marquee.addEventListener('pointerdown', (e) => {
+    marquee.setPointerCapture(e.pointerId);
+    dragging = true;
+    paused = true;
+    moved = false;
+    startX = e.clientX;
+    startOffset = x;
+  });
+
+  marquee.addEventListener('pointermove', (e) => {
+    if(!dragging) return;
+    const dx = e.clientX - startX;
+    if(Math.abs(dx) > 5) moved = true;
+    x = startOffset - dx;
+    clampLoop();
+    apply();
+  });
+
+  const endDrag = () => {
+    if(!dragging) return;
+    dragging = false;
+    setTimeout(() => { paused = false; moved = false; }, 250);
+  };
+  marquee.addEventListener('pointerup', endDrag);
+  marquee.addEventListener('pointercancel', endDrag);
+
+  // ホイール（PC）でも少し動かせる
+  marquee.addEventListener('wheel', (e) => {
+    paused = true;
+    x += (e.deltaY || e.deltaX);
+    clampLoop();
+    apply();
+    clearTimeout(marquee._wheelTimer);
+    marquee._wheelTimer = setTimeout(() => { paused = false; }, 250);
+  }, { passive:true });
 
   function tick(now){
     const dt = (now - last) / 1000;
     last = now;
 
     if(!paused && halfWidth > 0){
-      marquee.scrollLeft += speedPxPerSec * dt;
-      if(marquee.scrollLeft >= halfWidth){
-        marquee.scrollLeft -= halfWidth;
-      }
+      x += speedPxPerSec * dt;
+      clampLoop();
+      apply();
     }
     requestAnimationFrame(tick);
   }
+
+  clampLoop();
+  apply();
   requestAnimationFrame(tick);
 })();
 </script>
 
 </body>
 </html>
+``
